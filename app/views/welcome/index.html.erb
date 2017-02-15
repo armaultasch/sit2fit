@@ -1,0 +1,286 @@
+<!-- index.html.erb -->
+<!-- index.html.erb -->
+
+  <div class="whole-page">
+<div class="bye">
+
+<div class="row1">
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a href="/" class="navbar-brand svg" title="Engine Yard">
+        <object id="logo" class="logo" type="image/svg+xml" data="/images/global/engine-yard-pink.svg">
+          <div></div>
+        </object>
+      </a> -->
+      <h4><img src="/assets/girl_weights.gif" height="50" width="50" class="top-words"><a href="/">Welcome to the FitFinder!</a></h4>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown platform">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Platform">Healthy Eating</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="http://allrecipes.com/recipes/87/everyday-cooking/vegetarian/">Vegetarian Eating</a></li>
+            <li><a href="http://allrecipes.com/recipes/741/healthy-recipes/gluten-free/" title="Gluten">Gluten Free Eating</a></li>
+            <li><a href="http://allrecipes.com/recipes/738/healthy-recipes/dairy-free/" title="Dairy">Dairy Free Eating</a></li>
+            <li><a href="http://blog.myfitnesspal.com/20-meat-lover-meals-under-400-calories/" title="Meat">Meat Lovers</a></li>
+            <li><a href="http://www.countryliving.com/food-drinks/g1331/healthy-desserts/">Desserts</a></li>
+          </ul>
+        </li>
+        <li class="dropdown services">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Services">Social Media</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="http://www.harpersbazaar.com/beauty/diet-fitness/g4018/inspiring-fitness-girls-on-instagram/">Inspiration</a></li>
+            <li><a href="https://www.facebook.com/ScottFishmanNYC?fref=ts">Facebook: Motivation</a></li>
+             <li><a href="https://www.instagram.com/fittlyss/?hl=en">Instagram: Fitness</a></li>
+            <li><a href="https://twitter.com/fltness?lang=en">Twitter: Fitness & Health</a></li>
+            <li><a href="https://twitter.com/BeFitMotivation?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter: Motivation</a></li>
+           
+          </ul>
+        </li>
+        <li class="dropdown services">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Services">About Me</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+         <li><a href="https://github.com/armaultasch" title="GitHub">GitHub</a></li>
+         <li><a href="https://www.linkedin.com/in/alison-maultasch" title="LinkedIn">LinkedIn</a></li>
+     </ul>
+       </li>
+         
+            <li><a href="mailto:alison@sit2fit.co?Subject=Hello%20again" target="_top">Email Us</a></li>
+
+            <li><a href="http://www.rateyourburn.com/">Rate Your Burn</a></li>
+           
+
+           
+          
+    <li>
+         <a href="/welcome/new" title="training">Training Videos</a>
+       </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+<div class="container-fluid top home">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center" id="headline">
+          Finding the best classes for <strong> YOU. </strong><br>
+         
+        <h3 class="text-center black editable" id="subheading">
+          FitFinder is a way to bring the classes available in the Miami area to your fingertips in seconds.  The NO COMMITMENT does not require any personal or payment information.  FitFinder will simply ask you where you are, and what type of exercise you enjoy, in hopes of finding the best studio for you.  <br>
+          <p></p>
+          Whether you are just visiting the Miami area, or you're looking for the occasional mix in everyday gym rotation - the FitFinder has you covered. A way to see what's happening near you, when you're available, whenever you want.
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+           <button class="btn button-start">
+    <span class="glyphicon glyphicon-plus"></span>
+    Find Your Fit!
+  </button>
+        </h3></h1></br>
+      
+
+        <!-- <img src = "/assets/addiction.png" height = "200" width = "250"> -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+<div class="row new">
+  <div class="container-fluid">
+    <div class="col-xs-4 text-center">
+      <h1>FitFinder</h1>
+      <h2> Have anything to share about your experience using our site?  Any classes so amazing that you just can't stop thinking about it?  Let us and the rest of FitFinder users know!</h2>
+   
+    </div>
+    <div class="col-xs-4 text-center">
+  <h1> Reviews </h1>
+
+<ul class="scrollable-menu">
+  <% @posts.each do |post| %>
+    <li class = "js-post" data-id = "<%=post.id%>"><%= post.email %><br><%= post.description %></li>
+    
+  <%end%>
+</ul>
+
+
+</div>
+<div class="col-xs-3 move">
+<img src = "/assets/thoughts.png">
+<h1 class="move-again">
+<%= link_to "Add a new post", new_post_path %></h1>
+</div>
+</div>
+</div>
+<footer>
+
+  <div class="footer-fix text-center footer">
+    <div class="row">
+
+        <h4 >
+          FitFinder is a way to bring available classes in the Miami area to you.
+        </h4>
+        <h4 >
+           We aim to find the best studios and classes for your needs, to ensure that you're doing what you want, when you want! Hope that you enjoy..
+        </h4>
+
+
+   
+  </div>
+</div>
+
+</footer>
+<!-- if use below then also have to -->
+<!-- config->environments->production.rb change to config.assets.compile = true -->
+<!-- <img src="/assets/unicorn.gif"> -->
+
+
+
+
+</div>
+</div>
+<!-- location modal -->
+<div class="modal fade js-location-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title">
+          <span class="js-location-name">Where are you?</span>
+          <!-- <small class="js-location-number">#160</small> -->
+        </h3>
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <ul class="dl-locate">
+          
+       
+          
+          
+          <li class="myButton js-location-btn hover active js-location-brickell">Brickell</li><br>
+          <h2></h2>
+
+          
+          <li class="myButton js-location-btn hover active js-location-wynwood">Wynwood</li><br>
+      <h2></h2>
+          
+          <li class="myButton js-location-btn hover active js-location-downtown">Downtown</li><br>
+          <h2></h2>
+
+          <li class="myButton js-location-btn hover active js-location-southbeach">Southbeach</li><br>
+          <h2></h2>
+
+        
+          
+        </ul>
+        <button class="button-back1" >
+    
+    << Back 
+  </button>
+         
+
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+
+
+<!-- activity modal -->
+
+<div class="modal fade js-activity-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title">
+          <span class="js-activity-name" data-area="placeholder">What Do You Like To Do?</span>
+          <!-- <small class="js-location-number">#160</small> -->
+        </h3>
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <ul class="dl-act">
+          
+          <li class="myButton btn-act hover hidden active js-activity-yoga">
+            <a class="sup" href="#">
+              Yoga
+            </a>
+          </li><br>
+           <h2></h2>
+
+           <li class="myButton btn-act hover hidden active js-activity-cycle">
+            <a class="sup" href="#">
+              Cycling
+            </a>
+          </li><br>
+           <h2></h2>
+
+          
+          
+          
+          <li class="myButton btn-act hover hidden active js-activity-pilates">
+            <a class="sup"  href="#">
+              Pilates
+            </a>
+          </li><br>
+           <h2></h2>
+
+          <li class="myButton btn-act hover hidden active js-activity-barre">
+            <a class="sup" href="#" >
+              Barre
+            </a>
+          </li><br>
+          <h2></h2>
+
+     <li class="myButton btn-act hover hidden active js-activity-box">
+      <a class="sup" href="#">
+        Boxing
+      </a>
+    </li><br>
+      <h2></h2>
+
+          
+               
+  
+
+        </ul>
+        <button class="button-back2">
+    
+    << Back
+  </button>
+        
+
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+
+

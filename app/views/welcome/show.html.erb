@@ -1,0 +1,209 @@
+<!-- show.html.erb -->
+
+
+	<div class="row">
+	<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <a href="/" class="navbar-brand svg" title="Engine Yard">
+        <object id="logo" class="logo" type="image/svg+xml" data="/images/global/engine-yard-pink.svg">
+          <div></div>
+        </object>
+      </a> -->
+       <h4><img src="/assets/girl_weights.gif" height="50" width="50" class="top-words"><a href="/">Welcome to the FitFinder!</a></h4>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown platform">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Platform">Healthy Eating</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="http://allrecipes.com/recipes/87/everyday-cooking/vegetarian/">Vegetarian Eating</a></li>
+            <li><a href="http://allrecipes.com/recipes/741/healthy-recipes/gluten-free/" title="Gluten">Gluten Free Eating</a></li>
+            <li><a href="http://allrecipes.com/recipes/738/healthy-recipes/dairy-free/" title="Dairy">Dairy Free Eating</a></li>
+            <li><a href="http://blog.myfitnesspal.com/20-meat-lover-meals-under-400-calories/" title="Meat">Meat Lovers</a></li>
+            <li><a href="http://www.countryliving.com/food-drinks/g1331/healthy-desserts/">Desserts</a></li>
+          </ul>
+        </li>
+        <li class="dropdown services">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Services">Social Media</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a href="http://www.harpersbazaar.com/beauty/diet-fitness/g4018/inspiring-fitness-girls-on-instagram/">Inspiration</a></li>
+            <li><a href="https://www.facebook.com/ScottFishmanNYC?fref=ts">Facebook: Motivation</a></li>
+             <li><a href="https://www.instagram.com/fittlyss/?hl=en">Instagram: Fitness</a></li>
+            <li><a href="https://twitter.com/fltness?lang=en">Twitter: Fitness & Health</a></li>
+            <li><a href="https://twitter.com/BeFitMotivation?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter: Motivation</a></li>
+           
+          </ul>
+        </li>
+
+		
+         <li class="dropdown services">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Services">About Me</a>
+          <ul class="dropdown-menu dropdown-menu-left">
+         <li><a href="https://github.com/armaultasch" title="GitHub">GitHub</a></li>
+         <li><a href="https://www.linkedin.com/in/alison-maultasch" title="LinkedIn">LinkedIn</a></li>
+     </ul>
+       </li>
+          <li><a href="mailto:alison@sit2fit.co?Subject=Hello%20again" target="_top">Email Us</a></li>
+
+           <li><a href="http://www.rateyourburn.com/">Rate Your Burn</a></li>
+           
+     <li>
+         <a href="/welcome/new" title="training">Training Videos</a>
+       </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+<img class="home-background" src="/assets/run.jpg">
+<div class="row">
+<div class="container-fluid slogan-container">
+		
+			
+		
+				<h1> Results </h1>
+
+	<h2 class="sup"> You selected <%= @activity_name %> in <%= @area_name %> <button class=" button-result btn"><h4>
+          <a class="sup" href="/">
+    
+    Not right? Go Back</a>
+  </button></h4></h2>
+	
+
+</div>
+</div>
+
+<div class="row">
+	<div class="container bottom-sec">
+	<div class="col-sm-4">
+		<h2> Classes Available Today </h2>
+		
+		
+		<div class="class-today  scrollable-menu">
+
+	
+	<ul> 
+	<p class="bottom-content scrollable-menu">
+		<% @activity_today.each do |today|%>
+			<li class="class-time scrollable-menu">
+				<%= today.name%><br>
+				<%= today.activity%><br>
+				<%= today.time.strftime("%A, %B %d %I:%M%P")%><br>
+				<img src="/assets/location.png" height="20" width="20"><a href="http://maps.google.com/maps?q=<%= today.lat %> ,<%= today.lng %>"><%= today.address%></a><br>
+
+				<img src="/assets/phone.png" height="20" width="20"><%= today.phone%><br>	
+				
+			<div class="dropdown platform">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Platform">Description</a>
+          <div class="dropdown-menu">
+            <p><%= today.description%></p>
+            
+            </div>
+        </div>
+           <% end %> 
+          
+         
+        
+		</li>
+		</p>
+	</ul>
+</div>
+</div>
+	<div class="col-sm-4 ">
+		<h2> Tomorrow </h2>
+<div class="tmr-class  scrollable-menu">
+
+	
+	<ul>
+		<p class="bottom-content scrollable-menu">
+	
+	<% @activity_tmr.each do |tmr|%>
+			<li class="class-time scrollable-menu">
+				<%= tmr.name%><br>
+				<%= tmr.activity%><br>
+				<%= tmr.time.strftime("%A, %B %d %I:%M%P") %>
+				<img src="/assets/location.png" height="20" width="20"><a href="http://maps.google.com/maps?q=<%= tmr.lat %> ,<%= tmr.lng %>"><%= tmr.address%></a><br>
+	
+		<img src="/assets/phone.png" height="20" width="20"><%= tmr.phone%><br>
+		<div class="dropdown platform">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Platform">Description</a>
+          <div class="dropdown-menu">
+            <p><%= tmr.description%></p>
+            
+            </div>
+        </div>
+		
+
+			</li>
+		<% end %>
+	</p>
+	</ul>
+	</div>
+	
+</div>
+
+<div class="col-sm-4 ">
+	<h2>Later this week</h2>
+	<div class="all-classes scrollable-menu">
+	
+		
+		<ul>
+		<p class =" bottom-content scrollable-menu">
+	<% @other_activity.each do |show| %>
+	<li class="class-time scrollable-menu">
+		<%= show.name %><br>
+		<%= show.activity %><br>
+		<%= show.time.strftime("%A, %B %d %I:%M%P") %><br>
+		<img src="/assets/location.png" height="20" width="20"><a href="http://maps.google.com/maps?q=<%= show.lat %> ,<%= show.lng %>"><%= show.address%></a><br>
+		<img src="/assets/phone.png" height="20" width="20"><%= show.phone%><br>
+		
+		
+		<div class="dropdown platform">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Platform">Description</a>
+          <div class="dropdown-menu">
+            <p><%= show.description%></p>
+            
+            </div>
+        </div>
+
+
+				</li>
+			<% end %>
+			</p>
+		</ul>
+	</div>
+	</div>
+
+	
+	
+	</div>
+</div>
+
+<footer>
+
+  <div class="footer-fix text-center footer">
+  
+
+        <h4 >
+          FitFind is a way to bring what you like to do to your fingertips in seconds.
+        </h4>
+        <h4 >
+           We aim to find the best places and prices for your needs to ensure you not only get a good work out, but are doing the work out you enjoy!
+        </h4>
+
+
+   
+ 
+</div>
+
+</footer>
